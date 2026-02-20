@@ -101,7 +101,7 @@ export default function Command() {
         <List.Item
           key={repo.fullPath}
           title={repo.name}
-          subtitle={repo.fullPath}
+          accessories={[{ text: repo.fullPath.replace(os.homedir(), "~") }]}
           actions={
             <ActionPanel>
               {editors.length === 1 ? (

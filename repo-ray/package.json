@@ -1,29 +1,31 @@
 {
   "$schema": "https://www.raycast.com/schemas/extension.json",
-  "name": "open-repo",
-  "title": "Open Repo",
-  "description": "Open a git repository in your preferred editor",
+  "name": "repo-ray",
+  "title": "RepoRay",
+  "description": "Quickly open or clone git repositories from Raycast",
   "icon": "icon.png",
   "author": "nikolai",
   "categories": [
     "Developer Tools"
   ],
   "license": "MIT",
+  "preferences": [
+    {
+      "name": "projectDirectories",
+      "title": "Project Directories",
+      "description": "Comma-separated list of directories to scan for git repositories (e.g. ~/Documents, ~/Work)",
+      "type": "textfield",
+      "required": true,
+      "default": "~/dev"
+    }
+  ],
   "commands": [
     {
-      "name": "index",
+      "name": "open-repo",
       "title": "Open Repo",
       "description": "Search defined directories for git projects and open them in an editor of your choice",
       "mode": "view",
       "preferences": [
-        {
-          "name": "projectDirectories",
-          "title": "Project Directories",
-          "description": "Comma-separated list of directories to scan for git repositories (e.g. ~/Documents, ~/Work)",
-          "type": "textfield",
-          "required": true,
-          "default": "~/Documents"
-        },
         {
           "name": "editor1",
           "title": "Editor 1",
@@ -60,6 +62,12 @@
           "required": false
         }
       ]
+    },
+    {
+      "name": "clone-repo",
+      "title": "Clone Repository",
+      "description": "Clone a git repository into one of your project directories",
+      "mode": "view"
     }
   ],
   "dependencies": {

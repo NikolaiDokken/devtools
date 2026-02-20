@@ -1,6 +1,6 @@
-# Open Repo
+# RepoRay
 
-Search your local git repositories and open them in your preferred editor — directly from Raycast.
+Quickly open or clone git repositories — directly from Raycast.
 
 ## Setup
 
@@ -21,11 +21,15 @@ Set at least one editor using the **Editor 1** preference. Up to five editors ca
 - If only one editor is configured, repositories open directly in that editor.
 - If multiple editors are configured, selecting a repository presents a list to choose from.
 
-## Usage
+## Commands
 
-1. Open Raycast and search for **Open Repo**
-2. Type to filter your repositories by name
-3. Press `↵` to open the repository
+### Open Repo
+
+Search your local git repositories by name and open them in an editor.
+
+### Clone Repository
+
+Paste a repository URL and select which of your configured directories to clone it into.
 
 ## Preferences
 
