@@ -4,7 +4,7 @@
   "title": "RepoRay",
   "description": "Quickly open or clone git repositories from Raycast",
   "icon": "icon.png",
-  "author": "nikolai",
+  "author": "nikord",
   "categories": [
     "Developer Tools"
   ],
@@ -71,17 +71,20 @@
     }
   ],
   "dependencies": {
-    "@raycast/api": "^1.90.0"
+    "@raycast/api": "^1.103.0"
   },
   "devDependencies": {
-    "@raycast/utils": "^1.17.0",
+    "@raycast/eslint-config": "^2.1.1",
     "@types/react": "^19.2.14",
+    "eslint": "^9.22.0",
+    "prettier": "^3.5.3",
     "typescript": "^5.4.5"
   },
   "scripts": {
     "build": "ray build -e dist",
     "dev": "ray develop",
     "lint": "ray lint",
+    "fix-lint": "ray lint --fix",
     "publish": "npx @raycast/api@latest publish"
   }
 }

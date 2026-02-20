@@ -1,4 +1,14 @@
-import { Form, ActionPanel, Action, showToast, Toast, getPreferenceValues, popToRoot, closeMainWindow } from "@raycast/api";
+import {
+  Form,
+  ActionPanel,
+  Action,
+  showToast,
+  Toast,
+  getPreferenceValues,
+  popToRoot,
+  closeMainWindow,
+  List,
+} from "@raycast/api";
 import * as os from "os";
 import * as fs from "fs";
 import { execFile } from "child_process";
@@ -13,6 +23,17 @@ export default function CloneRepo() {
     .split(",")
     .map((d) => d.trim().replace(/^~/, os.homedir()))
     .filter((d) => d && fs.existsSync(d));
+
+  if (dirs.length === 0) {
+    return (
+      <List>
+        <List.EmptyView
+          title="No Directories Configured"
+          description="Make sure the configured directories exist on your system."
+        />
+      </List>
+    );
+  }
 
   async function handleSubmit(values: { url: string; directory: string }) {
     const toast = await showToast({ style: Toast.Style.Animated, title: "Cloning…" });
