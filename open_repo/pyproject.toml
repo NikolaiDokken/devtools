@@ -1,9 +1,0 @@
-[project]
-name = "open-repo"
-version = "0.1.0"
-dependencies = [
-    "questionary",
-]
-
-[project.scripts]
-open-repo = "open_repo:main"
