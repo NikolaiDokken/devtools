@@ -12,6 +12,8 @@ DOTFILES_DIR="$(cd "$(dirname "$0")" && pwd)"
 # Add a third field "source" to also add a source line to ~/.zshrc
 symlinks=(
     ".zshivalry.zsh:$HOME/.zshivalry.zsh:source"
+    "lazygit.yml:$HOME/.config/lazygit/config.yml"
+    "config.ghostty:$HOME/.config/ghostty/config.ghostty"
 )
 
 for entry in $symlinks; do
@@ -34,5 +36,14 @@ for entry in $symlinks; do
         fi
     fi
 done
+
+if [[ "$(uname)" == "Darwin" ]]; then
+    if ! command -v brew &>/dev/null; then
+        echo "\nInstalling Homebrew..."
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    fi
+    echo "\nInstalling Homebrew packages..."
+    brew bundle --file="$DOTFILES_DIR/Brewfile"
+fi
 
 echo "\nDone! Run 'source ~/.zshrc' to apply changes to your current session."

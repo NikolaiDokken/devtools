@@ -1,0 +1,5 @@
+font-family = Hack Nerd Font Mono
+background = #1d1d1d
+background-opacity = 0.8
+background-blur = true
+theme = Apple System Colors

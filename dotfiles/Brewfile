@@ -1,0 +1,8 @@
+brew "lazygit"
+brew "node"
+brew "pnpm"
+
+cask "font-hack-nerd-font"
+cask "ghostty"
+cask "raycast"
+cask "zen"
